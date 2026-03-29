@@ -1,0 +1,13 @@
+venv/
+__pycache__/ 
+*.pyc
+logs/
+artifacts/
+.env
+*.egg-info/
+Network_data/
+mlruns/
+final_models/
+predicted_output/
+credentials/
+mlflow.db
