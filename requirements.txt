@@ -158,7 +158,9 @@ jmespath==1.1.0
     #   boto3
     #   botocore
 joblib==1.5.3
-    # via scikit-learn
+    # via
+    #   -r requirements.in
+    #   scikit-learn
 kiwisolver==1.5.0
     # via matplotlib
 lxml==6.0.2

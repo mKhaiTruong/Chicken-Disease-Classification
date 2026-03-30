@@ -2,6 +2,7 @@ python-dotenv
 python-multipart
 pandas
 mlflow
+joblib
 ensure
 scipy
 numpy

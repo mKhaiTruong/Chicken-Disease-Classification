@@ -15,7 +15,6 @@ list_of_files = [
     f"src/{proj_name}/constants/__init__.py",
     f"src/{proj_name}/exception/__init__.py",
     f"src/{proj_name}/cloud/__init__.py",
-    f"src/{proj_name}/logging/__init__.py",
     f"src/{proj_name}/config/__init__.py",
     f"src/{proj_name}/utils/__init__.py",       # helper functions
     f"src/{proj_name}/pipeline/__init__.py",    # training & prediction flow
@@ -23,7 +22,7 @@ list_of_files = [
 
     "config/config.yaml",   # paths & settings
     "params.yaml",          # hyperparameters
-    "schema.yaml",          # data schema
+    # "schema.yaml",          # data schema
     "main.py",
     "Dockerfile",
     "requirements.in",
