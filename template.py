@@ -29,7 +29,8 @@ list_of_files = [
     "requirements_dev.in",
     "pyproject.toml",               # to package code
     "notebooks/research.ipynb",  # EDA & experiments
-    "templates/index.html"       # Flask UI
+    "templates/index.html"       # Flask UI / FastAPI
+    "dvc.yaml"
 ]
 
 for file in list_of_files:

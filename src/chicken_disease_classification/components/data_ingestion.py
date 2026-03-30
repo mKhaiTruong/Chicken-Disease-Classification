@@ -1,4 +1,4 @@
-import os, sys, zipfile, urllib.request as req
+import os, zipfile, urllib.request as req
 from pathlib import Path
 from chicken_disease_classification import logger
 from chicken_disease_classification.utils.common import get_size
