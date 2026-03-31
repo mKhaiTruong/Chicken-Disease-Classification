@@ -1,3 +1,7 @@
+torch
+torchvision
+
+tqdm
 python-dotenv
 python-multipart
 pandas
@@ -15,8 +19,3 @@ scikit-learn
 dagshub
 pymongo[srv]==3.12
 google-cloud-storage
-torch
-torchvision
-
-pywin32 ; platform_system == "Windows"
-pywinpty ; platform_system == "Windows"

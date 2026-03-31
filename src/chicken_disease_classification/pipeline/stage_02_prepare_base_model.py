@@ -1,6 +1,7 @@
 from chicken_disease_classification.config.config_manager import ConfigManager
 from chicken_disease_classification.components.prepare_base_model import PrepareBaseModel
 
+STAGE_NAME = "Prepare Base Model Stage"
 class PrepareBaseModelPipeline():
     def __init__(self):
         pass

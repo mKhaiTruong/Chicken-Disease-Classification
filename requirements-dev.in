@@ -1,0 +1,14 @@
+-r requirements.in
+
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch
+torchvision
+
+pywin32 ; platform_system == "Windows"
+pywinpty ; platform_system == "Windows"
+
+notebook
+ipykernel
+pytest
+seaborn
+pip-tools
