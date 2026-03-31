@@ -32,6 +32,8 @@ def save_json(content: dict, path: Path):
         os.makedirs(path.parent, exist_ok=True)
         with open(path, "w") as f:
             json.dump(content, f, indent=4)
+        
+        logger.info(f"json file saved at: {path}")
     except Exception as e:
         raise CustomException(e, sys)
     

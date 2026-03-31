@@ -2,6 +2,7 @@ torch
 torchvision
 
 tqdm
+dvc
 python-dotenv
 python-multipart
 pandas
