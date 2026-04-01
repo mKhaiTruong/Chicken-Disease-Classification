@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 from torchvision import models
 from pathlib import Path
+import mlflow
 
 from chicken_disease_classification.components.prepare_callbacks import PrepareCallbacks
 from chicken_disease_classification.utils.dataloader import get_dataloaders
@@ -39,10 +40,25 @@ class Training:
             lr=self.config.params_learning_rate
         )
         
+        mlflow.log_params({
+            "epochs": self.config.params_epochs,
+            "learning_rate": self.config.params_learning_rate,
+            "batch_size": self.config.params_batch_size,
+            "augmentation": self.config.params_is_augmentation,
+            "image_size": self.config.params_image_size
+        })
+        
         for epoch in range(self.config.params_epochs):
             train_loss = train_one_epoch(self.model, self.train_loader, criterion, optimizer, self.device)
             val_loss, accuracy = validate(self.model, self.val_loader, criterion, self.device)
 
+            # log per-epoch metrics
+            mlflow.log_metrics({
+                "train_loss": train_loss,
+                "val_loss": val_loss,
+                "accuracy": accuracy,
+            }, step=epoch)
+            
             print(
                 f"Epoch [{epoch+1}/{self.config.params_epochs}] "
                 f"Train Loss: {train_loss:.4f} | "

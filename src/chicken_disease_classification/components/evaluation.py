@@ -59,3 +59,13 @@ class Evaluation:
 
     def save_score(self):
         save_json(path=Path("scores.json"), content=self.score)
+        
+    def log_into_mlflow(self):
+        mlflow.log_metrics(self.score)
+        
+        # Log model + register
+        mlflow.pytorch.log_model(
+            self.model,
+            artifact_path="model",
+            registered_model_name="Chicken_Disease_Classification"
+        )

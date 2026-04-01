@@ -79,16 +79,16 @@ stages:
       size: 1563
     - path: src/chicken_disease_classification/components/training.py
       hash: md5
-      md5: de0286e291b3d0c42ed94d377ba8d556
-      size: 2432
+      md5: 42c33026bb21b165575b65433b389333
+      size: 3026
     - path: src/chicken_disease_classification/pipeline/stage_03_training.py
       hash: md5
-      md5: c8fd78d39bb6f911a871ff8091a1047e
-      size: 1324
+      md5: f86cdae99acbccb2ec970fc445c4a658
+      size: 1525
     params:
       params.yaml:
         AUGMENTATION: true
-        BATCH_SIZE: 16
+        BATCH_SIZE: 32
         CLASSES: 2
         EPOCHS: 1
         IMAGE_SIZE:
@@ -99,7 +99,7 @@ stages:
     outs:
     - path: artifacts/training/model.pth
       hash: md5
-      md5: 732990d24ac2538281ec7db26585d830
+      md5: 6905add403b3781fb50f176c722ed2c0
       size: 537084855
   evaluation:
     cmd: python 

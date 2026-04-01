@@ -1,8 +1,14 @@
-import sys
+import sys, mlflow
 from chicken_disease_classification import logger
 from chicken_disease_classification.exception.exception import CustomException
 from chicken_disease_classification.config.config_manager import ConfigManager
 from chicken_disease_classification.components.training import Training
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+mlflow.set_tracking_uri(os.environ["MLFLOW_TRACKING_URI"])
 
 STAGE_NAME = "Training Stage"
 class TrainingPipeline():
@@ -20,7 +26,9 @@ class TrainingPipeline():
         training = Training(config=training_config, callbacks_config=prepare_callbacks_config)
         training.get_base_model()
         training.get_dataloader()
-        training.train()
+        
+        with mlflow.start_run(run_name="training"):
+                training.train()
         
 if __name__ == "__main__":
         STAGE_NAME = "Training Stage"

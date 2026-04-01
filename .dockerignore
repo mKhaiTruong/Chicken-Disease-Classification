@@ -1,0 +1,16 @@
+.git
+.dvc
+venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+notebooks
+artifacts/data_ingestion
+artifacts/prepare_base_model
+artifacts/prepare_callbacks/checkpoints
+logs
+*.log
+requirements-dev.txt
+requirements-dev.in
+compile_packages.bat

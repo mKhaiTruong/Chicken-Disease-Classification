@@ -1,8 +1,14 @@
-import sys
+import sys, mlflow
 from chicken_disease_classification import logger
 from chicken_disease_classification.exception.exception import CustomException
 from chicken_disease_classification.config.config_manager import ConfigManager
 from chicken_disease_classification.components.evaluation import Evaluation
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+mlflow.set_tracking_uri(os.environ["MLFLOW_TRACKING_URI"])
 
 STAGE_NAME = "Evaluation Stage"
 class EvaluationPipeline():
@@ -14,8 +20,11 @@ class EvaluationPipeline():
         val_config = config.get_evaluation_config()
         evaluation = Evaluation(val_config)
         evaluation.load_model()
-        evaluation.evaluation()
-        evaluation.save_score()
+        
+        with mlflow.start_run(run_name="evaluation"):
+                evaluation.evaluation()
+                evaluation.save_score()
+                evaluation.log_into_mlflow()
         
 if __name__ == "__main__":
         STAGE_NAME = "Evaluation Stage"

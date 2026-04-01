@@ -31,6 +31,11 @@ list_of_files = [
     "notebooks/research.ipynb",  # EDA & experiments
     "templates/index.html"       # Flask UI / FastAPI
     "dvc.yaml"
+    
+    # IGNORES
+    ".gitignore",
+    ".dvcignore",
+    ".dockerignore",
 ]
 
 for file in list_of_files:
