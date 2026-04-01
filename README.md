@@ -10,6 +10,7 @@
 4. pip-compile requirements-dev.in >> pip-sync requirements-dev.txt
 5. update pyproject.toml to package code, and Dockerfile.
 6. pip install -e . >> run pyproject.toml >> package code
+7. if build Docker -> pip-compile requirements.in before building image
 
 ## Workflows:
 
