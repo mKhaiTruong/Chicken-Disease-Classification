@@ -1,4 +1,4 @@
-# Project to learn MLOPs
+# Project to learn MLOPs (The URL is currently suspended so the page cannot be found at the moment)
 
 # 0_0 Note-to-self: Own Guide
 
