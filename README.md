@@ -1,4 +1,4 @@
-# Chicken-Disease-Classification
+# Project to learn MLOPs
 
 # 0_0 Note-to-self: Own Guide
 
